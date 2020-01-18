@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
-import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
-import { Icon } from 'react-native-elements';
-
-const TabBarComponent = props => <BottomTabBar {...props} />;
-
-const TabScreens = createBottomTabNavigator(
-  {
-    // other screens
-  },
-  {
-    tabBarComponent: props => (
-      <TabBarComponent {...props} style={{ borderTopColor: '#605F60' }} />
-    ),
-  }
-);
+import BottomNav from './NavigatorComponent';
 
 class Main extends Component {
 
@@ -24,7 +10,7 @@ class Main extends Component {
                 flex: 1,
                 paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
                 }}>
-                <TabScreens />
+              <BottomNav />
             </View>
         );
     }
